@@ -2,7 +2,7 @@
 
 Docker Labs - Installing Docker - Lab 1 ( My plan, algorithm)
 
-Setup Vagrant environment and Install Docker
+# Setup Vagrant environment and Install Docker
 
    1. Turn on Vagrant Instance
 
@@ -19,7 +19,7 @@ Setup Vagrant environment and Install Docker
 
        sudo apt update -y && sudo apt-get install docker.io -y
 
-Two pieces of Docker. The client and the server, they are decoupled.
+# Two pieces of Docker. The client and the server, they are decoupled.
 
    4. Verify Installation
 
@@ -33,7 +33,7 @@ Two pieces of Docker. The client and the server, they are decoupled.
        alias stopdocks='docker stop $(docker ps -a -q)'
        alias rmdocks='docker rm $(docker ps -a -q)'
 
-Download our First Image
+# Download our First Image
 
    6. Check to see current images, by default there is none
 
@@ -47,7 +47,7 @@ Download our First Image
 
        docker images
 
-Run our first cont  ainer
+# Run our first cont  ainer
 
    9. See that no docker containers are running
 
