@@ -6,63 +6,63 @@ Docker Labs - Installing Docker - Lab 1 ( My plan, algorithm)
 
    1. Turn on Vagrant Instance
 
-        vagrant up
+     vagrant up
 
    2. SSH connect node1 and setup local DNS, and test
 
-        vagrant ssh node1
-        sudo cp /vagrant/hosts_file /etc/hosts
-        ping node1
-        ping node2
+     vagrant ssh node1
+     sudo cp /vagrant/hosts_file /etc/hosts
+     ping node1
+     ping node2
 
    3. Install Docker
 
-       sudo apt update -y && sudo apt-get install docker.io -y
+     sudo apt update -y && sudo apt-get install docker.io -y
 
 # Two pieces of Docker. The client and the server, they are decoupled.
 
    4. Verify Installation
 
-      sudo docker version
-      sudo docker info
+    sudo docker version
+    sudo docker info
 
    5. Setup Aliases
         
-       alias docker='sudo docker'
-       alias d='docker'
-       alias stopdocks='docker stop $(docker ps -a -q)'
-       alias rmdocks='docker rm $(docker ps -a -q)'
+     alias docker='sudo docker'
+     alias d='docker'
+     alias stopdocks='docker stop $(docker ps -a -q)'
+     alias rmdocks='docker rm $(docker ps -a -q)'
 
 # Download our First Image
 
    6. Check to see current images, by default there is none
 
-       docker images
+     docker images
 
    7. Pull the image 'ubuntu:14.04'
 
-       docker pull ubuntu:14.04
+     docker pull ubuntu:14.04
 
    8. See that the image now exists
 
-       docker images
+     docker images
 
-# Run our first cont  ainer
+# Run our first container
 
    9. See that no docker containers are running
 
-       docker ps -a
+     docker ps -a
 
    10. Start a container
 
-       docker run -it ubuntu:14.04
-       # See that you are in the container.. now exit out.
-       exit
-       # See that the container stopped
-       docker ps -a
+     docker run -it ubuntu:14.04
+  # Now exit container
+     exit
+ # Container stopped
+     docker ps -a
 
    11. Start a container in detached mode
 
-       docker run -d -it ubuntu:14.04
-       docker ps
-       docker attach <container id>
+     docker run -d -it ubuntu:14.04
+     docker ps
+     docker attach <container id>
