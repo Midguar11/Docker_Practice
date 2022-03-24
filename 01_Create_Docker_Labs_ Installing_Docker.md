@@ -1,6 +1,6 @@
 # Docker_Practice
 
-Docker Labs - Installing Docker ( My plan, algorithm)
+Docker Labs - Installing Docker ( My plan )
 
 # Setup Vagrant environment and Install Docker
 
