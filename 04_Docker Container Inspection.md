@@ -1,6 +1,7 @@
 
 # Inspect one of your containers
 
+    alias docker='sudo docker'
     docker inspect web01
     docker inspect web01 >> web01.json
 
