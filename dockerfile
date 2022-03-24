@@ -1,19 +1,12 @@
-FROM ubuntu:14.04
+FROM python:3.7-alpine
+WORKDIR /code
+ENV FLASK_APP app.py
+ENV FLASK_RUN_HOST 0.0.0.0
+EXPOSE 443
 
-RUN apt-get update 
-RUN apt-get install python3-pip -y
-RUN pip3 install Flask
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
-ENV HOME /home
-
-COPY flaskapp /home/flaskapp
-
-EXPOSE 5000 
-
-STOPSIGNAL SIGTERM
-
-WORKDIR /home/flaskapp
-
-ENTRYPOINT ["python3"]
-
-CMD ["app.py"]
+COPY . .
+CMD ["flask", "run"]
